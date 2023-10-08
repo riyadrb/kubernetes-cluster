@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: django-app
+
+spec:
+  replicas: 5
+  
+  selector:
+    matchLabels:
+      app: django-app
+  template:
+    metadata:
+      labels:
+        app: django-app
+    spec:
+      containers:
+      - name: django-app
+        image: riyadrb/python-app
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "225m"
+        ports:
+        - containerPort: 8000
