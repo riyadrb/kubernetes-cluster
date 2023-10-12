@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: django-app
-        image: riyadrb/python-app
+        image: riyadrb/python-app:kubernetes
         resources:
           limits:
             memory: "128Mi"
